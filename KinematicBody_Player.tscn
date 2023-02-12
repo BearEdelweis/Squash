@@ -101,17 +101,21 @@ transform = Transform( 1, 0, 0, 0, 0.7, 0, 0, 1.49012e-08, 1, 0, 0.343061, 0.025
 shape = SubResource( 1 )
 
 [node name="Area" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.142174, 0 )
 collision_layer = 0
 collision_mask = 2
 monitorable = false
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
-transform = Transform( 1.15, 0, 0, 0, 0.56675, 0, 0, 0, 1.15, 0, 0.639568, 0 )
+transform = Transform( 1.1, 0, 0, 0, 0.5, 0, 0, 0, 1.1, 0, 0.314987, 0 )
 shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "float_anim"
 anims/RESET = SubResource( 3 )
 anims/float_anim = SubResource( 4 )
+
+[node name="DoubleTapAwaiter" type="Timer" parent="."]
+wait_time = 0.2
 
 [connection signal="body_entered" from="Area" to="." method="OnAreaBodyEntered"]
